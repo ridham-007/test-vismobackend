@@ -3,6 +3,8 @@
 const cutsomApi = require('./api/custom-api/graphql')
 const extensions = [cutsomApi]
 
+//self note for understanding
+
 module.exports = (strapi) => {
     const extensionService = strapi.plugin('graphql').service('extension')
 
