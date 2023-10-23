@@ -1,18 +1,19 @@
 services:
   - type: web
-    name: backend
+    name: strapi
     env: node
     plan: starter
     buildCommand: yarn install && yarn build
-    startCommand: yarn start
+    startCommand: rsync -a public/ /data/public/ && yarn start
     healthCheckPath: /_health
+    autoDeploy: false
     disk:
-      name: backend-uploads
-      mountPath: /opt/render/project/src/public/uploads
+      name: strapi-data
+      mountPath: /data
       sizeGB: 1
     envVars:
       - key: NODE_VERSION
-        value: ~16.14.2
+        value: ~16.13.0
       - key: NODE_ENV
         value: production
       - key: DATABASE_FILENAME
@@ -23,7 +24,3 @@ services:
         generateValue: true
       - key: APP_KEYS
         generateValue: true
-
-databases:
-  - name: "backend database"
-    plan: starter
