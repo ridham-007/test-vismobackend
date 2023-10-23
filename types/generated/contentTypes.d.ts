@@ -659,6 +659,7 @@ export interface PluginUsersPermissionsUser extends Schema.CollectionType {
     >;
     customerID: Attribute.String;
     resetPasswordToken: Attribute.String;
+    test: Attribute.String;
     description: Attribute.RichText;
     sessionUID: Attribute.BigInteger;
     roomName: Attribute.String;
@@ -676,6 +677,11 @@ export interface PluginUsersPermissionsUser extends Schema.CollectionType {
       'oneToMany',
       'api::order.order'
     >;
+    camera_setting: Attribute.Relation<
+      'plugin::users-permissions.user',
+      'manyToOne',
+      'api::camera-setting.camera-setting'
+    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
@@ -686,6 +692,51 @@ export interface PluginUsersPermissionsUser extends Schema.CollectionType {
       Attribute.Private;
     updatedBy: Attribute.Relation<
       'plugin::users-permissions.user',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiCameraSettingCameraSetting extends Schema.CollectionType {
+  collectionName: 'camera_settings';
+  info: {
+    singularName: 'camera-setting';
+    pluralName: 'camera-settings';
+    displayName: 'Camera_Setting';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    brightness: Attribute.Integer & Attribute.DefaultTo<0>;
+    contrast: Attribute.Integer;
+    colorhue: Attribute.Integer;
+    saturation: Attribute.Integer;
+    sharpness: Attribute.Integer;
+    exposure: Attribute.Integer;
+    gamma: Attribute.Integer;
+    whitebalance: Attribute.Integer;
+    users_permissions_users: Attribute.Relation<
+      'api::camera-setting.camera-setting',
+      'oneToMany',
+      'plugin::users-permissions.user'
+    >;
+    title: Attribute.String & Attribute.Required;
+    name: Attribute.String;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::camera-setting.camera-setting',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::camera-setting.camera-setting',
       'oneToOne',
       'admin::user'
     > &
@@ -1073,6 +1124,7 @@ declare module '@strapi/strapi' {
       'plugin::users-permissions.permission': PluginUsersPermissionsPermission;
       'plugin::users-permissions.role': PluginUsersPermissionsRole;
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
+      'api::camera-setting.camera-setting': ApiCameraSettingCameraSetting;
       'api::contact.contact': ApiContactContact;
       'api::currency.currency': ApiCurrencyCurrency;
       'api::download.download': ApiDownloadDownload;
