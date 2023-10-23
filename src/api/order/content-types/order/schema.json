@@ -1,0 +1,87 @@
+{
+  "kind": "collectionType",
+  "collectionName": "orders",
+  "info": {
+    "singularName": "order",
+    "pluralName": "orders",
+    "displayName": "Order",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "price": {
+      "type": "float"
+    },
+    "paymentInterval": {
+      "type": "string"
+    },
+    "createAt": {
+      "type": "datetime"
+    },
+    "updateAt": {
+      "type": "datetime"
+    },
+    "startDate": {
+      "type": "datetime"
+    },
+    "endDate": {
+      "type": "datetime"
+    },
+    "productId": {
+      "type": "string"
+    },
+    "subscriptionId": {
+      "type": "string",
+      "unique": true
+    },
+    "title": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string"
+    },
+    "paymentIntentId": {
+      "type": "string"
+    },
+    "trailEnd": {
+      "type": "datetime"
+    },
+    "trailStart": {
+      "type": "datetime"
+    },
+    "setupIntentId": {
+      "type": "string"
+    },
+    "trialPeriodDays": {
+      "type": "integer"
+    },
+    "canceled": {
+      "type": "boolean",
+      "default": false
+    },
+    "canceledDate": {
+      "type": "datetime"
+    },
+    "cancellationDetails": {
+      "type": "text"
+    },
+    "user": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "premiums"
+    },
+    "imageId": {
+      "type": "string"
+    },
+    "imageUrl": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    }
+  }
+}

@@ -1,0 +1,49 @@
+{
+  "kind": "collectionType",
+  "collectionName": "promocodes",
+  "info": {
+    "singularName": "promocode",
+    "pluralName": "promocodes",
+    "displayName": "Promocode",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "duration": {
+      "type": "enumeration",
+      "enum": [
+        "once",
+        "repeating",
+        "forever"
+      ]
+    },
+    "couponId": {
+      "type": "string"
+    },
+    "valid": {
+      "type": "boolean",
+      "default": true
+    },
+    "currency": {
+      "type": "string"
+    },
+    "percent_off": {
+      "type": "string"
+    },
+    "amount_off": {
+      "type": "string"
+    },
+    "duration_in_months": {
+      "type": "string"
+    },
+    "max_redemptions": {
+      "type": "string"
+    }
+  }
+}

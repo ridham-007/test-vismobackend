@@ -1,0 +1,31 @@
+{
+  "kind": "collectionType",
+  "collectionName": "currencies",
+  "info": {
+    "singularName": "currency",
+    "pluralName": "currencies",
+    "displayName": "Currency",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "rate": {
+      "type": "float"
+    },
+    "code": {
+      "type": "string"
+    },
+    "update_at": {
+      "type": "string"
+    },
+    "country": {
+      "type": "string"
+    }
+  }
+}

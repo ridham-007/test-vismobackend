@@ -1,0 +1,42 @@
+{
+  "kind": "collectionType",
+  "collectionName": "payments",
+  "info": {
+    "singularName": "payment",
+    "pluralName": "payments",
+    "displayName": "Payment",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "status": {
+      "type": "string"
+    },
+    "intentId": {
+      "type": "string",
+      "unique": true
+    },
+    "customerId": {
+      "type": "string",
+      "unique": false
+    },
+    "mode": {
+      "type": "string"
+    },
+    "createAt": {
+      "type": "datetime"
+    },
+    "updateAt": {
+      "type": "datetime"
+    },
+    "amount": {
+      "type": "float"
+    },
+    "currencyType": {
+      "type": "string"
+    }
+  }
+}

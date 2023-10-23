@@ -1,0 +1,51 @@
+{
+  "kind": "collectionType",
+  "collectionName": "camera_settings",
+  "info": {
+    "singularName": "camera-setting",
+    "pluralName": "camera-settings",
+    "displayName": "Camera_Setting",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "brightness": {
+      "type": "integer",
+      "default": 0
+    },
+    "contrast": {
+      "type": "integer"
+    },
+    "colorhue": {
+      "type": "integer"
+    },
+    "saturation": {
+      "type": "integer"
+    },
+    "sharpness": {
+      "type": "integer"
+    },
+    "exposure": {
+      "type": "integer"
+    },
+    "gamma": {
+      "type": "integer"
+    },
+    "whitebalance": {
+      "type": "integer"
+    },
+    "users_permissions_users": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "plugin::users-permissions.user",
+      "mappedBy": "camera_setting"
+    },
+    "title": {
+      "type": "string",
+      "required": true
+    }
+  }
+}
