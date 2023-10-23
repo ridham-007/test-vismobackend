@@ -64,6 +64,9 @@
     "resetPasswordToken": {
       "type": "string"
     },
+    "test": {
+      "type": "string"
+    },
     "description": {
       "type": "richtext"
     },
