@@ -12,3 +12,5 @@ module.exports = (strapi) => {
         extensionService.use(extension(strapi))
     }
 }
+
+//include a new loop
