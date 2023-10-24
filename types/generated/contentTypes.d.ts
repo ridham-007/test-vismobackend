@@ -726,6 +726,7 @@ export interface ApiCameraSettingCameraSetting extends Schema.CollectionType {
     >;
     title: Attribute.String & Attribute.Required;
     name: Attribute.String;
+    test: Attribute.String;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

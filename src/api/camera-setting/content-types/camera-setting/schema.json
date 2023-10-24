@@ -49,6 +49,9 @@
     },
     "name": {
       "type": "string"
+    },
+    "test": {
+      "type": "string"
     }
   }
 }
