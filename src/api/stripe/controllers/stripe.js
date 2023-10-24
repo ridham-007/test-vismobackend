@@ -1760,10 +1760,6 @@ module.exports = {
 
         break;
 
-      case 'setup_intent.canceled':
-        const setupIntentCanceled = event.data.object;
-        break;
-
       case 'customer.subscription.created':
         const SubscriptionCreated = event.data.object;
         const sub = await stripe.subscriptions.retrieve(SubscriptionCreated.id,
